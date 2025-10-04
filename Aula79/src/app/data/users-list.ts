@@ -82,7 +82,7 @@ export const UsersList: UserInterface[] = [
             estado: "RS",
             pais: "Brasil"
         },
-        telefone: "51915161718",
+        telefone: "2721420336",
         ativo: false,
         funcao: "Analista",
         dataCadastro: "2023-08-15T09:00:00.000Z",

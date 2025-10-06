@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserInterface } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 import { FilterOptionsInterface } from './interfaces/filter-options.interface';
+import { endOfDay, isWithinInterval, startOfDay } from 'date-fns';
+import { MatDialog } from '@angular/material/dialog';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { filterUserList } from './components/filter/filter-users-list';
 
 @Component({
@@ -13,13 +16,16 @@ export class AppComponent implements OnInit {
 
   usersList: UserInterface[] = [];
   usersListFiltered: UserInterface[] = [];
-  userSelected: UserInterface = {} as UserInterface;
-  showUserDetails: boolean = false;
+
+  constructor(public dialog: MatDialog) {}
 
   onUserSelected(user: UserInterface) {
-    this.userSelected = user;
-    this.showUserDetails = true;
+    this.dialog.open(UserDetailsComponent, {
+      data: { user: user },
+      width: '500px'
+    });
   }
+
   ngOnInit() {
     setTimeout(() => {
       this.usersList = UsersList;

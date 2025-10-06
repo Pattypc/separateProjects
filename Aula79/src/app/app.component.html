@@ -9,8 +9,4 @@
             <app-users-list [usersList]="usersListFiltered" (userSelected)="onUserSelected($event)"></app-users-list>
         </div>
     </div>
-    <div class="right-div">
-        <!-- Conteúdo da div direita -->
-        <app-user-details [user]="userSelected" *ngIf="showUserDetails"></app-user-details>
-    </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { UserInterface } from '../../interfaces/user/user.interface';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-details',
@@ -7,5 +8,9 @@ import { UserInterface } from '../../interfaces/user/user.interface';
   styleUrl: './user-details.component.scss'
 })
 export class UserDetailsComponent {
-  @Input({ required: true }) user: UserInterface = {} as UserInterface;
+  user: UserInterface;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { user: UserInterface }) {
+    this.user = data.user;
+  }
 }

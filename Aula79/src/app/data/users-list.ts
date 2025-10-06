@@ -16,12 +16,12 @@ export const UsersList: UserInterface[] = [
         telefone: "11912345678",
         ativo: true,
         funcao: "Desenvolvedor",
-        dataCadastro: "2023-08-01T09:00:00.000Z",
+        dataCadastro: "2025-10-01T09:00:00.000Z",
         status: {
             online: true,
             verificado: true,
             assinaturaAtiva: true,
-            ultimoAcesso: "2023-08-02T09:00:00.000Z"
+            ultimoAcesso: "2025-10-02T09:00:00.000Z"
         }
     },
     {
@@ -39,12 +39,12 @@ export const UsersList: UserInterface[] = [
         telefone: "21956789101",
         ativo: false,
         funcao: "Designer",
-        dataCadastro: "2023-08-05T09:00:00.000Z",
+        dataCadastro: "2025-10-05T09:00:00.000Z",
         status: {
             online: false,
             verificado: false,
             assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-06T09:00:00.000Z"
+            ultimoAcesso: "2025-10-06T09:00:00.000Z"
         }
     },
     {
@@ -62,12 +62,12 @@ export const UsersList: UserInterface[] = [
         telefone: "31911121314",
         ativo: true,
         funcao: "Gerente",
-        dataCadastro: "2023-08-10T09:00:00.000Z",
+        dataCadastro: "2025-10-10T09:00:00.000Z",
         status: {
             online: false,
             verificado: true,
             assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-12T09:00:00.000Z"
+            ultimoAcesso: "2025-10-12T09:00:00.000Z"
         }
     },
     {
@@ -85,12 +85,12 @@ export const UsersList: UserInterface[] = [
         telefone: "2721420336",
         ativo: false,
         funcao: "Analista",
-        dataCadastro: "2023-08-15T09:00:00.000Z",
+        dataCadastro: "2025-10-15T09:00:00.000Z",
         status: {
             online: true,
             verificado: false,
             assinaturaAtiva: true,
-            ultimoAcesso: "2023-08-18T09:00:00.000Z"
+            ultimoAcesso: "2025-10-18T09:00:00.000Z"
         }
     },
     {
@@ -108,12 +108,12 @@ export const UsersList: UserInterface[] = [
         telefone: "81919202122",
         ativo: true,
         funcao: "Diretor",
-        dataCadastro: "2023-08-20T09:00:00.000Z",
+        dataCadastro: "2025-10-20T09:00:00.000Z",
         status: {
             online: false,
             verificado: true,
             assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-25T09:00:00.000Z"
+            ultimoAcesso: "2025-10-25T09:00:00.000Z"
         }
     }
 ];

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FilterOptionsInterface } from '../../interfaces/filter-options.interface';
 
 @Component({
@@ -6,6 +6,7 @@ import { FilterOptionsInterface } from '../../interfaces/filter-options.interfac
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
+
 export class FilterComponent {
   filterOptions: FilterOptionsInterface = {
     name: undefined,
@@ -14,12 +15,14 @@ export class FilterComponent {
     status: undefined,
 
   };
+
   statusList = [
     { description: 'Ativo', value: true },
     { description: 'Inativo', value: false }
   ];
 
+  @Output('onFilter') onfilterEmitt = new EventEmitter<FilterOptionsInterface>();
   onFilter() {
-    console.log(this.filterOptions);
+    this.onfilterEmitt.emit(this.filterOptions);
   }
 }

@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <label>Nome</label>
+  <input formControlName="name" />
+
+  <label>Email</label>
+  <input formControlName="email" />
+
+  <p *ngIf="form.invalid && form.touched" style="color: red;">
+    Preencha todos os campos corretamente.
+  </p>
+</form>

@@ -1,0 +1,78 @@
+.balance-card {
+    width: 46%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    h3 {
+        background-color: orange;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background-image: url('../icons/icon-hand.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        span {
+            margin-left: auto;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    }
+
+    .card-content {
+        padding: 15px;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                font-size: 0.9rem;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:nth-child(4) {
+                    margin-top: 10px;
+                }
+
+                .value {
+                    font-weight: 500;
+                }
+
+                &.total {
+                    font-weight: 500;
+                    background-color: #eeeeee;
+                    margin: 10px -5px 0;
+                    padding: 10px;
+                    border-bottom: none;
+                    border-radius: 10px;
+
+                    & + .total {
+                        padding-top: 20px;
+                        margin-top: -10px;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}

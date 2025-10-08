@@ -1,0 +1,82 @@
+.credit-card {
+    width: 46%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    h3 {
+        background-color: orange;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background-image: url('../icons/icon-credit-card.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .card-content {
+        padding: 15px;
+
+        .card-details {
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+
+            .card-number {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+
+            .card-holder {
+                font-size: 0.9rem;
+                font-weight: 300;
+            }
+
+            .card-brand {
+                text-align: right;
+                font-weight: bold;
+                font-style: italic;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                font-size: 0.9rem;
+
+                .value {
+                    font-weight: 500;
+                }
+
+                &:nth-child(1),
+                &:nth-child(3) {
+                    border-bottom: 1px solid #eee;
+                }
+
+                &:last-child {
+                    font-weight: bold;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

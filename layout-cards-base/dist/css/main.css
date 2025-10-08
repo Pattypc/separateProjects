@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: darkgrey;
+  font-family: 'Poppins', sans-serif; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap; }
+  .container .item {
+    width: 50%;
+    padding: 10px; }
+
+.balance-card {
+  width: 46%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden; }
+  .balance-card h3 {
+    background-color: orange;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center; }
+    .balance-card h3::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      background-image: url("../icons/icon-hand.png");
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .balance-card h3 span {
+      margin-left: auto;
+      font-size: 0.9rem;
+      font-weight: 500; }
+  .balance-card .card-content {
+    padding: 15px; }
+    .balance-card .card-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .balance-card .card-content ul li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem; }
+        .balance-card .card-content ul li:last-child {
+          border-bottom: none; }
+        .balance-card .card-content ul li:nth-child(4) {
+          margin-top: 10px; }
+        .balance-card .card-content ul li .value {
+          font-weight: 500; }
+        .balance-card .card-content ul li.total {
+          font-weight: 500;
+          background-color: #eeeeee;
+          margin: 10px -5px 0;
+          padding: 10px;
+          border-bottom: none;
+          border-radius: 10px; }
+          .balance-card .card-content ul li.total + .total {
+            padding-top: 20px;
+            margin-top: -10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0; }
+
+.credit-card {
+  width: 46%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden; }
+  .credit-card h3 {
+    background-color: orange;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center; }
+    .credit-card h3::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      background-image: url("../icons/icon-credit-card.png");
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .credit-card .card-content {
+    padding: 15px; }
+    .credit-card .card-content .card-details {
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px; }
+      .credit-card .card-content .card-details .card-number {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px; }
+      .credit-card .card-content .card-details .card-holder {
+        font-size: 0.9rem;
+        font-weight: 300; }
+      .credit-card .card-content .card-details .card-brand {
+        text-align: right;
+        font-weight: bold;
+        font-style: italic; }
+    .credit-card .card-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .credit-card .card-content ul li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 0.9rem; }
+        .credit-card .card-content ul li .value {
+          font-weight: 500; }
+        .credit-card .card-content ul li:nth-child(1), .credit-card .card-content ul li:nth-child(3) {
+          border-bottom: 1px solid #eee; }
+        .credit-card .card-content ul li:last-child {
+          font-weight: bold;
+          margin-top: 10px; }

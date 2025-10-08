@@ -1,15 +1,14 @@
-<main>
-  <h1>Meus Cards</h1>
-  <div class="cards-wrapper">
-    <!-- Card 1 -->
-    <app-card [cardData]="card1">
-      <p>Conteúdo do primeiro card. Este texto é inserido via ng-content.</p>
-    </app-card>
-
-    <!-- Card 2 -->
-    <app-card [cardData]="card2">
-      <p>Aqui vai o conteúdo do segundo card, que também pode ser um componente complexo.</p>
-      <button>Clique-me</button>
-    </app-card>
+<div class="container">
+  <div class="item">
+    <app-balance-card></app-balance-card>
   </div>
-</main>
+  <div class="item">
+    <app-credit-card></app-credit-card>
+  </div>
+  <div class="item">
+    <app-debit-card></app-debit-card>
+  </div>
+  <div class="item">
+    <app-client-card></app-client-card>
+  </div>
+</div>

@@ -1,6 +1,13 @@
 <div class="container">
   <h1>Lista de Usuários</h1>
   
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button (click)="createNewUser()" class="btn btn-primary">
+      ➕ Novo Usuário
+    </button>
+  </div>
+  
   <!-- Search Filter -->
   <div *ngIf="!loading && !error" class="search-container">
     <div class="search-box">
@@ -67,6 +74,122 @@
         <p class="catchphrase">&quot;{{ user.company.catchPhrase }}&quot;</p>
         <small>{{ user.company.bs }}</small>
       </div>
+      
+      <!-- Action Buttons -->
+      <div class="user-actions">
+        <button (click)="editUser(user)" class="btn btn-edit">
+          ✏️ Editar
+        </button>
+        <button (click)="deleteUser(user)" class="btn btn-delete">
+          🗑️ Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit/Create Form Modal -->
+  <div *ngIf="isEditing || isCreating" class="modal-overlay" (click)="cancelEdit()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>{{ isCreating ? 'Novo Usuário' : 'Editar Usuário' }}</h3>
+        <button (click)="cancelEdit()" class="close-btn">&times;</button>
+      </div>
+      
+      <form #userForm="ngForm" (ngSubmit)="saveUser(userForm)" class="user-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nome *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              [(ngModel)]="editingUser!.name"
+              #name="ngModel"
+              required
+              minlength="2"
+              class="form-control"
+            >
+            <div *ngIf="name.invalid && name.touched" class="error-message">
+              Nome é obrigatório (mínimo 2 caracteres)
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="username">Username *</label>
+            <input 
+              type="text" 
+              id="username" 
+              name="username"
+              [(ngModel)]="editingUser!.username"
+              #username="ngModel"
+              required
+              minlength="2"
+              class="form-control"
+            >
+            <div *ngIf="username.invalid && username.touched" class="error-message">
+              Username é obrigatório (mínimo 2 caracteres)
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              [(ngModel)]="editingUser!.email"
+              #email="ngModel"
+              required
+              email
+              class="form-control"
+            >
+            <div *ngIf="email.invalid && email.touched" class="error-message">
+              Email válido é obrigatório
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              [(ngModel)]="editingUser!.phone"
+              class="form-control"
+            >
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input 
+            type="url" 
+            id="website" 
+            name="website"
+              [(ngModel)]="editingUser!.website"
+            class="form-control"
+          >
+        </div>
+        
+        <div class="form-actions">
+          <button 
+            type="submit" 
+            [disabled]="userForm.invalid"
+            class="btn btn-save"
+          >
+            {{ isCreating ? 'Criar Usuário' : 'Salvar Alterações' }}
+          </button>
+          <button 
+            type="button" 
+            (click)="cancelEdit()"
+            class="btn btn-cancel"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -18,4 +18,19 @@ export class UsersService {
   getUserById(id: number): Observable<UserInterface> {
     return this.http.get<UserInterface>(`${this.apiUrl}/${id}`);
   }
+
+  // POST - Criar usuário
+  createUser(user: UserInterface): Observable<UserInterface> {
+    return this.http.post<UserInterface>(this.apiUrl, user);
+  }
+
+  // PUT - Atualizar usuário
+  updateUser(id: number, user: UserInterface): Observable<UserInterface> {
+    return this.http.put<UserInterface>(`${this.apiUrl}/${id}`, user);
+  }
+
+  // DELETE - Deletar usuário
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

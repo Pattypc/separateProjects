@@ -1,0 +1,72 @@
+<div class="container">
+  <h1>Lista de Usuários</h1>
+  
+  <!-- Search Filter -->
+  <div *ngIf="!loading && !error" class="search-container">
+    <div class="search-box">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        placeholder="Buscar por nome, username ou email..."
+        class="search-input"
+      >
+      <div class="search-icon">🔍</div>
+    </div>
+    <div class="search-info" *ngIf="searchTerm">
+      <span>{{ (users | filterByName:searchTerm).length }} usuário(s) encontrado(s)</span>
+    </div>
+  </div>
+  
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando usuários...</p>
+  </div>
+  
+  <!-- Error State -->
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+    <button (click)="loadUsers()">Tentar novamente</button>
+  </div>
+  
+  <!-- Users List -->
+  <div *ngIf="!loading && !error" class="users-grid">
+    <div *ngFor="let user of users | filterByName:searchTerm" class="user-card">
+      <div class="user-header">
+        <h3>{{ user.name }}</h3>
+        <span class="username">{{ '@' + user.username }}</span>
+      </div>
+      
+      <div class="user-info">
+        <div class="info-item">
+          <strong>Email:</strong>
+          <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+        </div>
+        
+        <div class="info-item">
+          <strong>Telefone:</strong>
+          <span>{{ user.phone }}</span>
+        </div>
+        
+        <div class="info-item">
+          <strong>Website:</strong>
+          <a [href]="'http://' + user.website" target="_blank">{{ user.website }}</a>
+        </div>
+      </div>
+      
+      <div class="address-section">
+        <h4>Endereço</h4>
+        <p>{{ user.address.street }}, {{ user.address.suite }}</p>
+        <p>{{ user.address.city }}, {{ user.address.zipcode }}</p>
+        <small>Coordenadas: {{ user.address.geo.lat }}, {{ user.address.geo.lng }}</small>
+      </div>
+      
+      <div class="company-section">
+        <h4>Empresa</h4>
+        <p><strong>{{ user.company.name }}</strong></p>
+        <p class="catchphrase">&quot;{{ user.company.catchPhrase }}&quot;</p>
+        <small>{{ user.company.bs }}</small>
+      </div>
+    </div>
+  </div>
+</div>
